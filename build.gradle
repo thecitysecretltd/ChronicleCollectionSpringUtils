@@ -1,0 +1,28 @@
+group 'com.thecitysecret.utils'
+
+version '1.0.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven{
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+}
+
+dependencies {
+    compile 'org.springframework:spring-context:4.1.6.RELEASE'
+    compile 'org.codehaus.groovy:groovy:2.4.3'
+    compile group: 'net.openhft', name: 'chronicle', version: '3.4.3'
+    compile group: 'net.openhft', name: 'chronicle-map', version: '3.1.1-alpha'
+    compile group: 'net.openhft', name: 'chronicle-bom', version: '1.3.0'
+    compile 'net.openhft:chronicle-network:1.0.5-alpha'
+
+    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+}

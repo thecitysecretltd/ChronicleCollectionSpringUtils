@@ -27,7 +27,7 @@ In memory map
 [source, xml]
 Map persisted to file
 ---
-<bean id="mapFactory" class="com.thecitysecret.util.spring.chronicle.ChronicleMapFactoryBean">
+<bean id="map" class="com.thecitysecret.util.spring.chronicle.ChronicleMapFactoryBean">
     <constructor-arg name="keyClass" value="java.lang.Integer"/>
     <constructor-arg name="valueClass" value="java.lang.String"/>
     <property name="entries" value="3000000"/>

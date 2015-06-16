@@ -10,9 +10,9 @@ import net.openhft.chronicle.map.ChronicleMapBuilder
 import org.springframework.beans.factory.FactoryBean
 
 /**
- * A {@see FactoryBean} for configuring Chronicle Map in Spring.
- * @param < K > The type of keys maintained by this map.
- * @param < V > The type of map values.
+ * A {@link FactoryBean } for configuring Chronicle Map in Spring.
+ * @param < K > -  The type of keys maintained by this map.
+ * @param < V > -  The type of map values.
  */
 class ChronicleMapFactoryBean<K, V> implements FactoryBean<Map<K, V>>
 {

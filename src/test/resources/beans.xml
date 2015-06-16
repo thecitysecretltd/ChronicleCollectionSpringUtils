@@ -3,10 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <bean id="mapFactory" class="com.thecitysecret.util.spring.chronicle.ChronicleMapFactoryBean">
+    <bean id="map" class="com.thecitysecret.util.spring.chronicle.ChronicleMapFactoryBean">
         <constructor-arg name="keyClass" value="java.lang.Integer"/>
         <constructor-arg name="valueClass" value="java.lang.String"/>
     </bean>
-
-    <bean id="myChronMap" factory-bean="mapFactory"/>
 </beans>

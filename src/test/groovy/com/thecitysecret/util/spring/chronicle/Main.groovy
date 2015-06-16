@@ -12,9 +12,9 @@ class Main
     public static void main(String[] args)
     {
         ApplicationContext context = new ClassPathXmlApplicationContext("/beans.xml")
-        ChronicleMap<Integer, String> map = context.getBean("myChronMap")
-        ChronicleMapFactoryBean<Integer, String> builder = context.getBean("mapFactory")
-        println(builder.chronicleMapBuilder.toString())
+        ChronicleMap<Integer, String> map = context.getBean("mapFactory")
+//        ChronicleMapFactoryBean<Integer, String> builder = context.getBean("mapFactory")
+//        println(builder.chronicleMapBuilder.toString())
 //        1048576.times {
 //            map[it] = "Stuff"
 //        }

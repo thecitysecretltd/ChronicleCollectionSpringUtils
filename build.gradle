@@ -17,6 +17,7 @@ repositories {
 }
 
 dependencies {
+    gradleApi()
     compile 'org.springframework:spring-context:4.1.6.RELEASE'
     compile 'org.codehaus.groovy:groovy:2.4.3'
     compile group: 'net.openhft', name: 'chronicle', version: '3.4.3'
@@ -25,4 +26,8 @@ dependencies {
     compile 'net.openhft:chronicle-network:1.0.5-alpha'
 
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = 2.4
 }

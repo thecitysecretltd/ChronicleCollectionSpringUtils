@@ -2,7 +2,42 @@
 
 == Chronicle Map ==
 
+Chronicle Maps can be configured by setting properties in Spring. These properties correspond with the
+properties the ChronicleMapBuilder class uses to create and configure a ChronicleMap.
 
+[source, xml]
+This is all you need to create a fully configured Chronicle Map
+---
+<bean id="map" class="com.thecitysecret.util.spring.chronicle.ChronicleMapFactoryBean">
+    <constructor-arg name="keyClass" value="java.lang.Integer"/>
+    <constructor-arg name="valueClass" value="java.lang.String"/>
+</bean>
+---
+
+[source,xml]
+In memory map
+---
+<bean id="map" class="com.thecitysecret.util.spring.chronicle.ChronicleMapFactoryBean">
+    <constructor-arg name="keyClass" value="java.lang.Integer"/>
+    <constructor-arg name="valueClass" value="java.lang.String"/>
+    <property name="entries" value="3000000"/>
+</bean>
+---
+
+[source, xml]
+Map persisted to file
+---
+<bean id="mapFactory" class="com.thecitysecret.util.spring.chronicle.ChronicleMapFactoryBean">
+    <constructor-arg name="keyClass" value="java.lang.Integer"/>
+    <constructor-arg name="valueClass" value="java.lang.String"/>
+    <property name="entries" value="3000000"/>
+    <property name="dataFilePath" value="/my/data/file/path"/>
+</bean>
+---
+
+The ChronicleMapBuilder documentation can be found here:
+
+http://openhft.github.io/Chronicle-Map/apidocs/net/openhft/chronicle/map/ChronicleMapBuilder.html
 
 == Chronicle Queue ==
 

@@ -41,4 +41,27 @@ http://openhft.github.io/Chronicle-Map/apidocs/net/openhft/chronicle/map/Chronic
 
 == Chronicle Queue ==
 
-TODO
+Chronicle Queues can also be configured by setting properties in Spring. These properties correspond with the
+properties the ChronicleQueueBuilder (Indexed & Vanilla) class uses to create and configure a ChronicleQueue.
+Both builders require an instance of a file to be created.
+
+[source,xml]
+This is the most basic setup needed to create a Chronicle Queue (the INDEXED value can be changed to VANILLA)
+---
+<bean id="queue" class="com.thecitysecret.util.spring.chronicle.ChronicleQueueFactoryBean">
+    <property name="path" value="/a/file/path"/>
+    <property name="queueType" value="INDEXED"/>
+</bean>
+[source,xml]
+The queue can be configured by passing properties to the queue bean e.g. cacheLineSize
+---
+<bean id="queue" class="com.thecitysecret.util.spring.chronicle.ChronicleQueueFactoryBean">
+    <property name="path" value="/a/file/path"/>
+    <property name="queueType" value="VANILLA"/>
+    <property name="cacheLineSize" value="128"/>
+</bean>
+---
+
+The ChronicleQueueBuilder documentation can be found here:
+
+http://openhft.github.io/Chronicle-Queue/apidocs/net/openhft/chronicle/ChronicleQueueBuilder.html

@@ -9,7 +9,7 @@ import org.springframework.beans.factory.FactoryBean
  */
 class ChronicleQueueFactoryBean implements FactoryBean<Chronicle>
 {
-    public enum QueueType
+    static public enum QueueType
     {
         INDEXED, VANILLA
     }
